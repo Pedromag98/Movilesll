@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var personasSlider: UISlider!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -35,8 +36,11 @@ class ViewController: UIViewController {
     @IBAction func calcularButton(_ sender: UIButton) {
      
         let cuenta = (totalcuentaTextField.text! as NSString).floatValue
-        let porcentaje = porcentajeSlider.value
-        let personas = personasSlider.value
+        let porcentaje = porcentajeSlider!.value
+        let personas = personasSlider!.value
+        
+        print(porcentaje)
+        print(personas)
         
         cerebroPropi.calcularPropina(cuenta: cuenta, porcentaje: Int(porcentaje), personas: Int(personas))
         
