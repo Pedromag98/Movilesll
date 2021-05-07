@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Wk-eR-FmU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Buscador-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="buscadorMapas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6CG-ms-cNd">
+                                <rect key="frame" x="0.0" y="133" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bSb-eZ-jys"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kfa-7T-rf2">
+                                <rect key="frame" x="0.0" y="177" width="414" height="693"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="kfa-7T-rf2" secondAttribute="bottom" constant="-8" id="9lt-mx-vwZ"/>
+                            <constraint firstItem="6CG-ms-cNd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I2a-Tu-Xt7"/>
+                            <constraint firstItem="6CG-ms-cNd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JuU-w6-EeB"/>
+                            <constraint firstItem="6CG-ms-cNd" firstAttribute="trailing" secondItem="kfa-7T-rf2" secondAttribute="trailing" id="KN4-lL-afh"/>
+                            <constraint firstItem="kfa-7T-rf2" firstAttribute="top" secondItem="6CG-ms-cNd" secondAttribute="bottom" id="KW9-nD-8Ps"/>
+                            <constraint firstItem="6CG-ms-cNd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-7" id="PTD-ip-9Np"/>
+                            <constraint firstItem="6CG-ms-cNd" firstAttribute="leading" secondItem="kfa-7T-rf2" secondAttribute="leading" id="WGP-xH-tcp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Buscador" id="9bv-B9-vKd">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="location-2" id="kvp-mk-izS">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="UbicacionButton:" destination="BYZ-38-t0r" id="yJ5-J7-0qX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="MapaMK" destination="kfa-7T-rf2" id="IES-rR-dAM"/>
+                        <outlet property="buscadorSB" destination="6CG-ms-cNd" id="6eM-ze-8Bx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="103.79464285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OXM-LS-nEs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Wk-eR-FmU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Kkh-nc-OV1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LHN-Fv-d7P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZk-UC-kTT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location-2" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
